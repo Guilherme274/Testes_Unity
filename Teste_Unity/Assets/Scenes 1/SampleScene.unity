@@ -9753,7 +9753,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 0.0001
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
@@ -9843,8 +9843,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 741536798}
   velocidade: 9
-  forcaPulo: 0.003
-  spawn: {x: 0, y: 0}
+  forcaPulo: 0.09
+  spawn: {x: -23.43, y: -8.03}
   prefabRobo: {fileID: 0}
 --- !u!95 &741536802
 Animator:
@@ -10231,7 +10231,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1584276285
 MonoBehaviour:
   m_ObjectHideFlags: 0
