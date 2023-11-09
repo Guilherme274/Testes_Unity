@@ -24,6 +24,7 @@ public class Player : MonoBehaviour
     [SerializeField] GameObject prefabRobo;
     CinemachineVirtualCamera cineCamera;
     bool agachou = false;
+    bool atacou = false;
 
 
        private void Awake()
@@ -31,6 +32,7 @@ public class Player : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         cineCamera = FindObjectOfType<CinemachineVirtualCamera>();
+        
     }
 
     private void FixedUpdate()
@@ -83,11 +85,12 @@ public class Player : MonoBehaviour
         }
         if (Input.GetMouseButtonDown(0))
         {
-            anim.SetBool("atacou", true);
+            atacou = true;
+            Atacar();
             Debug.Log("atacou");
         }
 
-        //anim.SetBool("atacou", false);
+        
 
         if (lado != 0)
         {
@@ -107,7 +110,7 @@ public class Player : MonoBehaviour
 
         if (Input.GetKeyUp(KeyCode.C) && agachou)
         {
-            agachou = false;
+            
             Agachar();
 
         }
@@ -179,6 +182,13 @@ public class Player : MonoBehaviour
     public void Agachar()
     {
         anim.SetBool("agachou", agachou);
+        agachou = false;
+    }
+
+    public void Atacar()
+    {
+        anim.SetBool("atacar", atacou);
+        atacou = false;
     }
 
 }
