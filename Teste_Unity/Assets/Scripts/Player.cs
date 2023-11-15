@@ -76,15 +76,19 @@ public class Player : MonoBehaviour
             agachou = false;
             lado = 1;
             Agachar();
+            Atacar();
         }
         if (horizontal < 0)
         {
             agachou = false;
             lado = -1;
             Agachar();
+            Atacar();
         }
         if (Input.GetMouseButtonDown(0))
         {
+            agachou = false;
+            Agachar();
             atacou = true;
             Atacar();
             Debug.Log("atacou");
@@ -106,11 +110,12 @@ public class Player : MonoBehaviour
         {
             agachou = true;
             Agachar();
+            Atacar();
         }
 
         if (Input.GetKeyUp(KeyCode.C) && agachou)
         {
-            
+            agachou = false;
             Agachar();
 
         }
@@ -182,12 +187,11 @@ public class Player : MonoBehaviour
     public void Agachar()
     {
         anim.SetBool("agachou", agachou);
-        agachou = false;
     }
 
     public void Atacar()
     {
-        anim.SetBool("atacar", atacou);
+        anim.SetBool("atacou", atacou);
         atacou = false;
     }
 
