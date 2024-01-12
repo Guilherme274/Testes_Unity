@@ -18,16 +18,21 @@ public class Player : MonoBehaviour
     bool pulou = false;
     //[SerializeField] GameObject mensagem;
     bool entrou = false;
-    int lado = 0;
+    public int lado = 0;
     bool morreu = false;
     [SerializeField] Vector2 spawn;
     [SerializeField] GameObject prefabRobo;
     CinemachineVirtualCamera cineCamera;
     bool agachou = false;
     bool atacou = false;
+    [SerializeField] GameObject tiro;
+    [SerializeField] GameObject player;
+    [SerializeField] float velocidadeTiro;
+     
 
 
-       private void Awake()
+
+    private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
@@ -69,6 +74,9 @@ public class Player : MonoBehaviour
                 }
             }
         }
+
+       
+
         var posicaoX = rb.velocity.x;
 
         if (horizontal > 0)
@@ -91,6 +99,18 @@ public class Player : MonoBehaviour
             Agachar();
             atacou = true;
             Atacar();
+            if(lado == 1)
+            {
+                Instantiate(tiro, new Vector3(player.transform.position.x + 2, player.transform.position.y, player.transform.position.y), Quaternion.identity);
+               
+            }
+
+            if(lado == -1)
+            {
+                Instantiate(tiro, new Vector3(player.transform.position.x - 2, player.transform.position.y, player.transform.position.y), Quaternion.identity);
+               
+            }
+               
             Debug.Log("atacou");
         }
 

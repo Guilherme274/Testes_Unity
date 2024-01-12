@@ -9844,8 +9844,12 @@ MonoBehaviour:
   rb: {fileID: 741536798}
   velocidade: 9
   forcaPulo: 0.09
+  lado: 0
   spawn: {x: -23.43, y: -8.03}
   prefabRobo: {fileID: 0}
+  tiro: {fileID: 6040444816517008752, guid: 028650bf242b88a46bb3206c8f352b8d, type: 3}
+  player: {fileID: 741536796}
+  velocidadeTiro: 6
 --- !u!95 &741536802
 Animator:
   serializedVersion: 4
@@ -10247,8 +10251,12 @@ MonoBehaviour:
   rb: {fileID: 1584276288}
   velocidade: 9
   forcaPulo: 0.05
+  lado: 0
   spawn: {x: -23.43, y: -8.03}
   prefabRobo: {fileID: 7616039380311403482, guid: ff39380aea804924c9f1114c48724c10, type: 3}
+  tiro: {fileID: 0}
+  player: {fileID: 0}
+  velocidadeTiro: 0
 --- !u!70 &1584276286
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
